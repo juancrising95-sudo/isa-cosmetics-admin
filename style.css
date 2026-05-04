@@ -362,7 +362,7 @@ body::before{
 
 /* Tarjeta producto */
 .producto{
-    background:white;
+    background:#cfeeea;
     border-radius:20px;
     overflow:hidden;
     box-shadow:0 10px 25px rgba(0,0,0,0.15);
@@ -382,17 +382,21 @@ body::before{
 
 .info-producto{
     padding:18px;
+    text-align:center;
+    background:#dff5f2;
 }
 
 .info-producto h3{
     margin:0;
-    color:#4a5d23;
+    color:#2f3b1f;
+    font-size:22px;
+    font-weight:700;
 }
 
 .info-producto p{
     font-size:14px;
-    color:#666;
-    margin:8px 0 15px;
+    color:#555;
+    line-height:1.5;
 }
 
 /* Botón WhatsApp */
@@ -442,10 +446,10 @@ body::before{
 .precio{
     display:block;
     text-align:center;
-    font-weight:700;
-    font-size:18px;
-    color:#4a5d23;
-    margin:10px 0;
+    font-weight:800;
+    font-size:22px;
+    color:#2f6b2f;
+    margin:12px 0 16px;
 }
 
 /* ============================= */
@@ -526,6 +530,45 @@ body.eucerin::before{
         180deg,
         #FFA500 0%,
         #FFA500 40%,
+        #a9ddff 100%
+    );
+}
+
+body.victoria::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background: linear-gradient(
+        180deg,
+        #FFC0CB 0%,
+        #FFC0CB 40%,
+        #a9ddff 100%
+    );
+}
+
+body.ordene::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background: linear-gradient(
+        180deg,
+        #ffff00 0%,
+        #ffff00 40%,
+        #a9ddff 100%
+    );
+}
+
+body.dove::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background: linear-gradient(
+        180deg,
+        #FFD700 0%,
+        #FFD700 40%,
         #a9ddff 100%
     );
 }
