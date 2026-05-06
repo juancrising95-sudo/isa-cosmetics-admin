@@ -6,7 +6,9 @@ document.querySelectorAll(".btn-wsp").forEach(boton => {
         const producto = boton.closest(".producto");
 
         const nombre = producto.querySelector("h3").innerText;
-        const imagen = producto.querySelector("img").src;
+        const imagenLocal = producto.querySelector("img").getAttribute("src");
+
+const imagen = "https://isa-cosmetics.onrender.com/" + imagenLocal.replace("../../", "");
 
         const numero = "59169846591";
 
