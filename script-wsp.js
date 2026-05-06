@@ -1,0 +1,23 @@
+document.querySelectorAll(".btn-wsp").forEach(boton => {
+
+    boton.addEventListener("click", function(e){
+        e.preventDefault();
+
+        const producto = boton.closest(".producto");
+
+        const nombre = producto.querySelector("h3").innerText;
+        const imagen = producto.querySelector("img").src;
+
+        const numero = "59169846591";
+
+        const mensaje =
+`Hola, quiero consultar por este producto:%0A
+${nombre}%0A
+${imagen}`;
+
+        const url = `https://wa.me/${numero}?text=${mensaje}`;
+
+        window.open(url, "_blank");
+    });
+
+});

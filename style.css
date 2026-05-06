@@ -57,7 +57,7 @@ body::before{
 .z1{ top:62.2%; }
 .z2{ top:68.1%; }
 .z3{ top:74.7%; }
-.z4{ top:82.3%; }
+.z4{ top:80.3%; }
 .z5{ top:86.5%; }
 .z6{ top:92.2%; }
 
@@ -569,6 +569,45 @@ body.dove::before{
         180deg,
         #FFD700 0%,
         #FFD700 40%,
+        #a9ddff 100%
+    );
+}
+
+body.loreal::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background: linear-gradient(
+        180deg,
+        #A020F0 0%,
+        #A020F0 40%,
+        #a9ddff 100%
+    );
+}
+
+body.nivea::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background: linear-gradient(
+        180deg,
+        #0000FF 0%,
+        #0000FF 40%,
+        #a9ddff 100%
+    );
+}
+
+body.cerave::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background: linear-gradient(
+        180deg,
+        #66ffff 0%,
+        #66ffff 40%,
         #a9ddff 100%
     );
 }
