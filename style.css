@@ -663,3 +663,46 @@ body.cerave::before{
 body.pagina-categoria::before{
     background:none !important;
 }
+
+
+
+
+#bannerApp{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    color: white;
+    padding: 15px;
+    z-index: 9999;
+    animation: aparecer 0.5s ease;
+}
+
+.banner-contenido{
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#btnInstalar{
+    background: #25D366;
+    border: none;
+    padding: 10px 16px;
+    color: white;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+#cerrarBanner{
+    cursor: pointer;
+    font-size: 18px;
+}
+
+@keyframes aparecer{
+    from{ transform: translateY(100%); }
+    to{ transform: translateY(0); }
+}
