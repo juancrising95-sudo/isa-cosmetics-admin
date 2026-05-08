@@ -5,7 +5,7 @@ async function obtenerProductos() {
         .select("*");
 
     if (error) {
-        console.error("ERROR SUPABASE:", error);
+        console.error(error);
         return;
     }
 
