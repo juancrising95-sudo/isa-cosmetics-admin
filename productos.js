@@ -4,7 +4,7 @@ async function obtenerProductos() {
         .from("productos")
         .select("*");
 
-    if(error){
+    if (error) {
         console.error("ERROR SUPABASE:", error);
         return;
     }
