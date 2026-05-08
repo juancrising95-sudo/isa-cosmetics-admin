@@ -1,5 +1,10 @@
+const APP_VERSION = "2";
+const INSTALL_KEY = "isa_app_instalada_v" + APP_VERSION;
+
+
+
 let deferredPrompt;
-const INSTALL_KEY = "isa_app_instalada";
+
 
 // Detectar si la app ya está instalada
 function appYaInstalada() {
