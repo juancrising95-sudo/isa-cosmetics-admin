@@ -1,7 +1,7 @@
 async function obtenerProductos() {
 
     const { data, error } = await db
-        .from("productos")
+        .from("productos_isa")   // 👈 ESTE ES EL CAMBIO CLAVE
         .select("*");
 
     if (error) {
