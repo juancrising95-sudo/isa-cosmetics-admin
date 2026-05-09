@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Admin ISA</title>
+  <link rel="stylesheet" href="admin.css">
+
+  <!-- 1️⃣ Primero librería Supabase -->
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+
+  <!-- 2️⃣ Luego tu conexión -->
+  <script src="supabase.js"></script>
+
+  <!-- 3️⃣ Luego popup promociones -->
+  <script src="promo-popup.js"></script>
+</head>
+
+<body>
+
+<h1>Panel Admin</h1>
+<div id="productos"></div>
+
+<!-- 4️⃣ RECIÉN AQUÍ va tu script -->
+<script>
+async function cargarProductos() {
+    const { data, error } = await db.from("productos_isa").select("*").order("id");
+
+    const contenedor = document.getElementById("productos");
+    contenedor.innerHTML = "";
+
+    data.forEach(prod => {
+        contenedor.innerHTML += `
+        <div class="card">
+            <img src="${prod.imagen}" width="120">
+
+            <input id="nombre-${prod.id}" value="${prod.nombre}">
+            <input id="marca-${prod.id}" value="${prod.marca}">
+            <input id="precio-${prod.id}" value="${prod.precio}">
+            <input id="imagen-${prod.id}" value="${prod.imagen}">
+            <input id="categoria-${prod.id}" value="${prod.categoria}">
+            
+            <textarea id="desc-${prod.id}">${prod.descripcion}</textarea>
+
+            <label>
+                Visible:
+                <input type="checkbox" id="visible-${prod.id}" ${prod.visible ? "checked" : ""}>
+            </label>
+
+            <button onclick="guardar(${prod.id})">Guardar</button>
+            <button onclick="eliminar(${prod.id})">Eliminar</button>
+        </div>
+        `;
+    });
+}
+
+async function guardar(id) {
+    const producto = {
+        nombre: document.getElementById(`nombre-${id}`).value,
+        marca: document.getElementById(`marca-${id}`).value,
+        precio: document.getElementById(`precio-${id}`).value,
+        imagen: document.getElementById(`imagen-${id}`).value,
+        categoria: document.getElementById(`categoria-${id}`).value,
+        descripcion: document.getElementById(`desc-${id}`).value,
+        visible: document.getElementById(`visible-${id}`).checked
+    };
+
+    const { error } = await db.from("productos_isa").update(producto).eq("id", id);
+    if(error) alert("Error guardando");
+    else alert("Guardado ✔");
+}
+
+async function eliminar(id) {
+    if(!confirm("¿Eliminar producto?")) return;
+    await db.from("productos_isa").delete().eq("id", id);
+    cargarProductos();
+}
+
+cargarProductos();
+</script>
+
+</body>
+</html>
