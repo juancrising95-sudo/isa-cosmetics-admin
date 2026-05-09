@@ -751,3 +751,43 @@ body.pagina-categoria::before{
   from{transform:scale(.7);opacity:0}
   to{transform:scale(1);opacity:1}
 }
+
+.promo-destacada{
+    display: block;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 12px;
+
+    background: linear-gradient(135deg, #ff2d55, #ffcc00, #ff6ec7);
+    background-size: 300% 300%;
+    animation: gradientMove 6s ease infinite;
+
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 45, 85, 0.5);
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+.promo-destacada h3{
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.promo-destacada p{
+    margin: 5px 0 0;
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+.promo-destacada:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 45, 85, 0.8);
+}
+
+@keyframes gradientMove{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
