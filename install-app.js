@@ -1,4 +1,4 @@
-const APP_VERSION = "2";
+const APP_VERSION = "3";
 const INSTALL_KEY = "isa_app_instalada_v" + APP_VERSION;
 
 
