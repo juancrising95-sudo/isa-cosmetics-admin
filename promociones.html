@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Promoción Día de la Madre</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  background: linear-gradient(180deg,#ffe3ec,#fff);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.container{
+  max-width:600px;
+  padding:25px;
+  text-align:center;
+  animation: fadeIn 1.2s ease;
+}
+
+/* IMAGEN PROMO */
+.promo-img{
+  width:100%;
+  border-radius:22px;
+  box-shadow:0 15px 40px rgba(0,0,0,.18);
+  animation: float 4s ease-in-out infinite;
+}
+
+/* RECUADRO URGENCIA PREMIUM */
+.promo-urgencia{
+  margin-top:28px;
+  padding:14px;
+  border-radius:16px;
+  position:relative;
+  overflow:hidden;
+}
+
+/* borde animado */
+.promo-urgencia::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius:18px;
+  background:linear-gradient(90deg,#ff3d6e,#ff7aa2,#ff3d6e);
+  background-size:300%;
+  animation:bordeMove 6s linear infinite;
+  z-index:0;
+}
+
+/* fondo interior */
+.promo-urgencia::after{
+  content:"";
+  position:absolute;
+  inset:2px;
+  background:white;
+  border-radius:14px;
+  z-index:1;
+}
+
+/* texto animado */
+.urgencia-texto{
+  position:relative;
+  z-index:2;
+  white-space:nowrap;
+  font-weight:bold;
+  color:#ff3d6e;
+  animation:textoMove 12s linear infinite;
+}
+
+/* BOTON WHATSAPP */
+.btn-wsp{
+  margin-top:28px;
+  display:inline-block;
+  background:#25D366;
+  color:white;
+  padding:18px 30px;
+  font-size:20px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:bold;
+  box-shadow:0 8px 25px rgba(0,0,0,.2);
+  animation:pulse 2s infinite;
+  transition:.3s;
+}
+.btn-wsp:hover{
+  transform:scale(1.07);
+}
+
+/* BOTON VOLVER */
+.btn-back{
+  margin-top:20px;
+  display:inline-block;
+  background:#111;
+  color:#fff;
+  padding:12px 22px;
+  border-radius:30px;
+  text-decoration:none;
+  font-size:14px;
+  box-shadow:0 4px 12px rgba(0,0,0,.25);
+}
+
+/* ANIMACIONES */
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(37,211,102,.6);}
+  70%{box-shadow:0 0 0 18px rgba(37,211,102,0);}
+  100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+}
+
+@keyframes float{
+  0%{transform:translateY(0px);}
+  50%{transform:translateY(-12px);}
+  100%{transform:translateY(0px);}
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes bordeMove{
+  0%{background-position:0%}
+  100%{background-position:300%}
+}
+
+@keyframes textoMove{
+  0%{transform:translateX(100%)}
+  100%{transform:translateX(-100%)}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- IMAGEN PROMOCIONAL -->
+  <img src="assets/promo-madre.jpg" class="promo-img" alt="Promoción Día de la Madre">
+
+  <!-- RECUADRO URGENCIA -->
+  <div class="promo-urgencia">
+    <div class="urgencia-texto">
+      🎁 PROMOCIÓN VÁLIDA HASTA AGOTAR STOCK • ESCRÍBENOS AHORA •
+    </div>
+  </div>
+
+  <!-- BOTON WHATSAPP -->
+  <a 
+  class="btn-wsp"
+  href="https://wa.me/59168807598?text=Hola%20quiero%20la%20PROMOCIÓN%20POR%20EL%20DÍA%20DE%20LA%20MADRE"
+  target="_blank">
+  QUIERO LA PROMOCIÓN 💖
+  </a>
+
+  <!-- BOTON VOLVER -->
+  <br>
+  <a href="index.html" class="btn-back">← Volver al catálogo</a>
+
+</div>
+
+</body>
+</html>
