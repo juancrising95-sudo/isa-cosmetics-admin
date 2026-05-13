@@ -76,9 +76,7 @@
 <script src="sparkles.js"></script>
 <script src="install-app.js"></script>
 
-<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-<script src="supabase.js"></script>
-<script src="productos.js"></script>
+
 <!-- <script src="promo-popup.js"></script> -->
 
 <script>
@@ -100,6 +98,30 @@ window.addEventListener("load", function(){
 
 });
 </script>
+<script type="module">
+import { supabase } from "./supabase.js"
 
+async function pruebaConexion() {
+
+  const { data, error } = await supabase
+    .from("categorias")
+    .select("*")
+
+  if (error) {
+    console.log(error)
+    document.body.insertAdjacentHTML("beforeend",
+      "<h2 style='color:red'>❌ Error conectando con Supabase</h2>")
+    return
+  }
+
+  console.log(data)
+
+  document.body.insertAdjacentHTML("beforeend",
+    `<h2 style="color:green">✅ Conectado a Supabase</h2>
+     <p>Categorías encontradas: ${data.length}</p>`)
+}
+
+pruebaConexion()
+</script>
 </body>
 </html>
