@@ -10,7 +10,7 @@ document.querySelectorAll(".btn-wsp").forEach(boton => {
 
 const imagen = "https://isa-cosmetics.onrender.com/" + imagenLocal.replace("../../", "");
 
-        const numero = "59168807598";
+        const numero = "59169846591";
 
         const mensaje =
 `Hola, quiero consultar por este producto:%0A
