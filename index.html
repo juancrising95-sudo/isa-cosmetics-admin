@@ -4,124 +4,68 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ISA COSMETICS</title>
-
 <link rel="stylesheet" href="style.css">
-
-<!-- 🔥 PWA APP ICON 🔥 -->
-<link rel="manifest" href="manifest.json">
+<!-- PWA desactivado en clon de desarrollo -->
+<!-- <link rel="manifest" href="manifest.json"> -->
 <meta name="theme-color" content="#000000">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<link rel="apple-touch-icon" href="isa-cosmetics.png">
-
 </head>
-
 <body>
-
 <div class="sparkles"></div>
-
-<!-- ⭐ LATERALES DECORATIVOS ⭐ -->
 <div class="decoracion-lateral izquierda">
     <div class="promo-box">
         <h3>CATÁLOGO, MAYO 2026</h3>
         <p>¡Descubre nuestros productos!</p>
     </div>
-
     <div class="promo-box">
         <h3>🔥 DESLIZA HASTA CATEGORIAS PARA VER NUESTROS PRODUCTOS</h3>
     </div>
 </div>
-
 <div class="decoracion-lateral derecha">
     <div class="promo-box">
         <h3>🎁 EN MAYO:</h3>
         <p>Celebramos la valentía de las madres y la dignidad del trabajo.</p>
     </div>
-
     <a href="promociones.html" class="promo-box promo-destacada">
-    <h3>💖 PROMOCION POR EL DIA DE LA MADRE, MAYO 2026</h3>
-    
-</a>
+        <h3>💖 PROMOCION POR EL DIA DE LA MADRE, MAYO 2026</h3>
+    </a>
 </div>
-
-<!-- SECCIÓN 1 PORTADA -->
 <section class="pantalla">
     <img src="assets/portada.png" class="img-fondo">
 </section>
-
-<!-- SECCIÓN 2 CATEGORÍAS -->
 <section class="pantalla pantalla-categorias" id="seccion-categorias">
     <div id="ancla-categorias"></div>
     <img src="assets/categorías.png" class="img-fondo">
-
     <div class="zonas-click">
         <a href="facial.html" class="zona z1" onclick="guardarCatalogo()"></a>
-<a href="corporal.html" class="zona z2" onclick="guardarCatalogo()"></a>
-<a href="capilar.html" class="zona z3" onclick="guardarCatalogo()"></a>
-<a href="maquillaje.html" class="zona z4" onclick="guardarCatalogo()"></a>
-<a href="proteccion.html" class="zona z5" onclick="guardarCatalogo()"></a>
-<a href="perfumes.html" class="zona z6" onclick="guardarCatalogo()"></a>
+        <a href="corporal.html" class="zona z2" onclick="guardarCatalogo()"></a>
+        <a href="capilar.html" class="zona z3" onclick="guardarCatalogo()"></a>
+        <a href="maquillaje.html" class="zona z4" onclick="guardarCatalogo()"></a>
+        <a href="proteccion.html" class="zona z5" onclick="guardarCatalogo()"></a>
+        <a href="perfumes.html" class="zona z6" onclick="guardarCatalogo()"></a>
+    </div>
 </section>
-
-<!-- SECCIÓN 3 CONTACTO -->
 <section class="pantalla">
     <img src="assets/información.png" class="img-fondo">
-
     <div class="zonas-click">
         <a href="https://wa.me/59168807598" class="zona contacto"></a>
         <a href="https://maps.google.com" class="zona mapa"></a>
     </div>
 </section>
-
 <script src="sparkles.js"></script>
-<script src="install-app.js"></script>
-
-
-<!-- <script src="promo-popup.js"></script> -->
-
+<!-- install-app.js desactivado en clon -->
+<!-- <script src="install-app.js"></script> -->
 <script>
 function guardarCatalogo(){
     sessionStorage.setItem("volverCatalogo","si");
 }
-
 window.addEventListener("load", function(){
-
     if(sessionStorage.getItem("volverCatalogo") === "si"){
-
         sessionStorage.removeItem("volverCatalogo");
-
         const ancla = document.getElementById("ancla-categorias");
         const y = ancla.getBoundingClientRect().top + window.pageYOffset;
-
         window.scrollTo(0, y);
     }
-
 });
-</script>
-<script type="module">
-import { supabase } from "./supabase.js"
-
-async function pruebaConexion() {
-
-  const { data, error } = await supabase
-    .from("categorias")
-    .select("*")
-
-  if (error) {
-    console.log(error)
-    document.body.insertAdjacentHTML("beforeend",
-      "<h2 style='color:red'>❌ Error conectando con Supabase</h2>")
-    return
-  }
-
-  console.log(data)
-
-  document.body.insertAdjacentHTML("beforeend",
-    `<h2 style="color:green">✅ Conectado a Supabase</h2>
-     <p>Categorías encontradas: ${data.length}</p>`)
-}
-
-pruebaConexion()
 </script>
 </body>
 </html>

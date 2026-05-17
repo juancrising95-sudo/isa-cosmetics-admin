@@ -4,35 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Categoría Corporal</title>
-
 <link rel="stylesheet" href="style.css">
 </head>
-
-<body class="pagina-categoria">
-
-<!-- BOTÓN VOLVER -->
+<body class="corporal">
 <a href="index.html" class="btn-volver" onclick="volverCatalogo()">← Volver al catálogo</a>
-
 <div class="header-categoria">
     <h1>Cuidado Corporal</h1>
     <p>Marcas disponibles:</p>
 </div>
-
-<div class="grid-marcas">
-    <a href="marcas/corporal/nivea.html" class="marca">NIVEA</a>
-    <a href="marcas/corporal/eucerin.html" class="marca">EUCERIN</a>
-    <a href="marcas/corporal/natura.html" class="marca">NATURA</a>
-    <a href="marcas/corporal/laca.html" class="marca">LACA</a>
-    <a href="marcas/corporal/dove.html" class="marca">DOVE</a>
-    <a href="marcas/corporal/ordene.html" class="marca">ORDEÑE EVO</a>
-    <a href="marcas/corporal/cerave.html" class="marca">CERAVE</a>
-</div>
-
+<div id="contenedor-marcas" class="grid-marcas"></div>
 <script>
-function volverCatalogo(){
-    sessionStorage.setItem("volverCatalogo","si");
-}
+function volverCatalogo(){ sessionStorage.setItem("volverCatalogo","si") }
 </script>
-
+<script type="module" src="./cargarMarcas.js"></script>
 </body>
 </html>

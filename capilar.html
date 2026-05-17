@@ -6,27 +6,16 @@
 <title>Categoría Capilar</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
-<body class="pagina-categoria">
-
-<!-- BOTÓN VOLVER -->
+<body class="capilar">
 <a href="index.html" class="btn-volver" onclick="volverCatalogo()">← Volver al catálogo</a>
-
 <div class="header-categoria">
     <h1>Cuidado Capilar</h1>
-    <p>Marcas disponibles</p>
+    <p>Marcas disponibles:</p>
 </div>
-
-<div class="grid-marcas">
-    <a href="marcas/capilar/nivea.html" class="marca"></a>
-    
-</div>
-
+<div id="contenedor-marcas" class="grid-marcas"></div>
 <script>
-function volverCatalogo(){
-    sessionStorage.setItem("volverCatalogo","si");
-}
+function volverCatalogo(){ sessionStorage.setItem("volverCatalogo","si") }
 </script>
-
+<script type="module" src="./cargarMarcas.js"></script>
 </body>
 </html>

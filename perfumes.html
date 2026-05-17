@@ -6,28 +6,16 @@
 <title>Categoría Perfumes</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
-<body class="pagina-categoria">
-
-<!-- BOTÓN VOLVER -->
+<body class="perfumes">
 <a href="index.html" class="btn-volver" onclick="volverCatalogo()">← Volver al catálogo</a>
-
 <div class="header-categoria">
-    <h1>Perfumes y Fragancias</h1>
-    <p>Marcas disponibles</p>
+    <h1>Perfumes</h1>
+    <p>Marcas disponibles:</p>
 </div>
-
-<div class="grid-marcas">
-    <a href="marcas/perfumes/victoria.html" class="marca">Victoria's Secret</a>
-    <a href="marcas/perfumes/garnier.html" class="marca">GARNIER</a>
-    
-</div>
-
+<div id="contenedor-marcas" class="grid-marcas"></div>
 <script>
-function volverCatalogo(){
-    sessionStorage.setItem("volverCatalogo","si");
-}
+function volverCatalogo(){ sessionStorage.setItem("volverCatalogo","si") }
 </script>
-
+<script type="module" src="./cargarMarcas.js"></script>
 </body>
 </html>
